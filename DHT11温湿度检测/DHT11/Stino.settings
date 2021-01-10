@@ -1,0 +1,15 @@
+{
+    "arduino_root": "D:\\Program Files\\arduino-1.0.4", 
+    "baudrate": "9600", 
+    "board": "Arduino Uno", 
+    "full_compilation": false, 
+    "global_setting": false, 
+    "language": "Chinese Simplified", 
+    "platform": "Arduino AVR Boards", 
+    "pre_setting_folder_path": "D:\\Program Files\\arduino-1.0.4\\libraries\\dht11", 
+    "programmer": "AVR ISP", 
+    "serial_port": "COM10", 
+    "show_arduino_menu": true, 
+    "show_serial_monitor_menu": "", 
+    "sketchbook_root": "E:\\Arduino Demo"
+}
