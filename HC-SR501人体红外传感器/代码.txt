@@ -1,0 +1,17 @@
+#define HCPin 2    //宏定义一个2号口引脚“MQPin”
+void setup()    //setup初始化函数，只运行一次
+{
+  Serial.begin(9600);    //设置串口数据波特率
+  pinMode(HCPin, INPUT);   //将上方定义的MQPin（2号口）的工作模式转化为输入
+}
+void loop()    //loop函数，循环运行
+{
+  if (digitalRead(HCPin) == HIGH)    //if判断语句，判断MQPin引脚(2号口)读出(digitalRead)的数据是否为高电平
+  {
+    Serial.println("Someone here!");    //上方if语句判断满足，在串口持续输出“Someone here!”
+  }
+  else{    //else,引脚读出数据不是高电平，不满足条件
+    Serial.println("Nobody");    //不满足条件，在串口持续输出“Nobody”
+  }
+  delay(1000);    //延时1秒
+}
