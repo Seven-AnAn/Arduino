@@ -1,0 +1,23 @@
+//MP播放，5V和GND都要接，把A10和A9接到一起，A10无效，A9为暂停，A8为下一首，A7上一首
+const int nextpin = 8;
+const int stoppin = 7;
+char c;
+void setup()
+{
+  pinMode(nextpin, OUTPUT);
+  pinMode(stoppin, OUTPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  c = Serial.read();
+  if(c == 'a'){
+    digitalWrite(nextpin, HIGH);
+    delay(500);
+    digitalWrite(nextpin, LOW);
+  }
+  if(c == 'b'){
+    digitalWrite(stoppin, HIGH);
+    delay(500);
+    digitalWrite(stoppin, LOW);
+  }
+}
