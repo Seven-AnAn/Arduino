@@ -1,0 +1,30 @@
+#define Aout A0 //MQ-135 AO 接 Arduino Uno A0
+int pinBuzzer = 4;
+int temp = 0; //临时变量，存储A0读取的数据
+ 
+void setup() {
+// put your setup code here, to run once:
+  pinMode(pinBuzzer, OUTPUT); //设置pinBuzzer脚为输出状态
+  Serial.begin(9600);//定义波特率
+  pinMode(Aout, INPUT);//定义A0为INPUT模式
+} 
+ 
+void loop() {
+  // put your main code here, to run repeatedly:
+  temp = analogRead(Aout); //读取A0的模拟数据
+  if(temp>=5)
+  {
+    Serial.println("危险");
+    digitalWrite(pinBuzzer,HIGH);
+    pinMode(4,OUTPUT);
+    tone(4,100);
+    delay(200);
+  }
+else{
+  Serial.println("安全");
+  digitalWrite(pinBuzzer,LOW);
+  pinMode(4,INPUT);
+  delay(200);
+}
+  delay(2000);  //延时2000毫秒
+}
