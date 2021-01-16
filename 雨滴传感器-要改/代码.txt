@@ -1,0 +1,12 @@
+const int rain = 9;
+void setup() {
+  Serial.begin(9600);
+  pinMode(A1,INPUT); 
+  pinMode(rain,OUTPUT); 
+}
+void loop() {
+  int raindata = (map(analogRead(A1), 0, 1023, 235, 0));
+  analogWrite(rain, raindata);
+  Serial.println(raindata);
+  delay(500);
+}
