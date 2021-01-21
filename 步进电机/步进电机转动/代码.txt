@@ -1,0 +1,16 @@
+//无需使用库文件
+// 引脚定义
+const int pinsCount = 4;    // 所用引脚个数
+int Pins[] = { 8,9,10, 11, };   // 对应的引脚
+void setup() {// 循环设置，把对应的引脚都设置成输出
+  for (int thisPin = 0; thisPin < pinsCount; thisPin++) {
+    pinMode(Pins[thisPin], OUTPUT);
+  }
+}
+void loop() {
+  for (int num = 0; num < 4; num++) {
+      digitalWrite(Pins[num], HIGH);
+      delay(20);
+      digitalWrite(Pins[num], LOW);
+  // 这样就让4个引脚循环输出高电平了    }
+  }
